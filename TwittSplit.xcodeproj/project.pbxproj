@@ -17,7 +17,20 @@
 		AC72651320923A190041D380 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC72651220923A190041D380 /* Assets.xcassets */; };
 		AC72651620923A190041D380 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC72651420923A190041D380 /* LaunchScreen.storyboard */; };
 		AC72652120923A190041D380 /* TwittSplitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC72652020923A190041D380 /* TwittSplitTests.swift */; };
+		ACD3AB8E20A36A27004BB201 /* TweetListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD3AB8D20A36A27004BB201 /* TweetListViewController.swift */; };
+		ACD3AB9020A36A35004BB201 /* TweetListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD3AB8F20A36A35004BB201 /* TweetListViewModel.swift */; };
+		ACD3AB9220A36B89004BB201 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD3AB9120A36B89004BB201 /* Tweet.swift */; };
 		ACD3AB9820A374CB004BB201 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD3AB9720A374CB004BB201 /* Constants.swift */; };
+		ACD3AB9A20A376EF004BB201 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD3AB9920A376EF004BB201 /* User.swift */; };
+		ACD3AB9D20A378FC004BB201 /* NewTweetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD3AB9C20A378FC004BB201 /* NewTweetViewController.swift */; };
+		ACD3AB9F20A37907004BB201 /* NewTweetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD3AB9E20A37907004BB201 /* NewTweetViewModel.swift */; };
+		ACD3ABA320A37958004BB201 /* TweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD3ABA220A37958004BB201 /* TweetCell.swift */; };
+		ACD3ABA520A3F0DF004BB201 /* TweetIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD3ABA420A3F0DE004BB201 /* TweetIndicator.swift */; };
+		ACD3ABA820A483D3004BB201 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD3ABA720A483D3004BB201 /* DataStore.swift */; };
+		ACD3ABAA20A4840D004BB201 /* IdentifiableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD3ABA920A4840D004BB201 /* IdentifiableObject.swift */; };
+		ACD3ABB020A492A6004BB201 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD3ABAE20A492A6004BB201 /* Assets.swift */; };
+		ACD3ABB120A492A6004BB201 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD3ABAF20A492A6004BB201 /* Storyboards.swift */; };
+		ACD3ABB320A49DA9004BB201 /* Seed.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD3ABB220A49DA9004BB201 /* Seed.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +59,20 @@
 		AC72651C20923A190041D380 /* TwittSplitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TwittSplitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC72652020923A190041D380 /* TwittSplitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwittSplitTests.swift; sourceTree = "<group>"; };
 		AC72652220923A190041D380 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ACD3AB8D20A36A27004BB201 /* TweetListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetListViewController.swift; sourceTree = "<group>"; };
+		ACD3AB8F20A36A35004BB201 /* TweetListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetListViewModel.swift; sourceTree = "<group>"; };
+		ACD3AB9120A36B89004BB201 /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		ACD3AB9720A374CB004BB201 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		ACD3AB9920A376EF004BB201 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		ACD3AB9C20A378FC004BB201 /* NewTweetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTweetViewController.swift; sourceTree = "<group>"; };
+		ACD3AB9E20A37907004BB201 /* NewTweetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTweetViewModel.swift; sourceTree = "<group>"; };
+		ACD3ABA220A37958004BB201 /* TweetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetCell.swift; sourceTree = "<group>"; };
+		ACD3ABA420A3F0DE004BB201 /* TweetIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetIndicator.swift; sourceTree = "<group>"; };
+		ACD3ABA720A483D3004BB201 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		ACD3ABA920A4840D004BB201 /* IdentifiableObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentifiableObject.swift; sourceTree = "<group>"; };
+		ACD3ABAE20A492A6004BB201 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
+		ACD3ABAF20A492A6004BB201 /* Storyboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
+		ACD3ABB220A49DA9004BB201 /* Seed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seed.swift; sourceTree = "<group>"; };
 		BA4679431607EFCF91F1487F /* Pods_TwittSplit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TwittSplit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD2FF390CAF35C8D7C2B16C5 /* Pods-TwittSplitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwittSplitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TwittSplitTests/Pods-TwittSplitTests.release.xcconfig"; sourceTree = "<group>"; };
 		FB310D765436E909E4D2C954 /* Pods-TwittSplit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwittSplit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TwittSplit/Pods-TwittSplit.debug.xcconfig"; sourceTree = "<group>"; };
@@ -136,11 +162,47 @@
 		ACD3AB8620A359B9004BB201 /* TweetSplit */ = {
 			isa = PBXGroup;
 			children = (
+				ACD3ABA420A3F0DE004BB201 /* TweetIndicator.swift */,
 				AC3B5F4520A2068C00630100 /* TweetProccessor.swift */,
 				AC3B5F4920A2085F00630100 /* TweetComponent.swift */,
 				AC3B5F4720A2069D00630100 /* TweetConfig.swift */,
 			);
 			path = TweetSplit;
+			sourceTree = "<group>";
+		};
+		ACD3AB8920A369D5004BB201 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				ACD3AB8A20A369DD004BB201 /* Tweet */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		ACD3AB8A20A369DD004BB201 /* Tweet */ = {
+			isa = PBXGroup;
+			children = (
+				ACD3ABA020A37919004BB201 /* TweetList */,
+				ACD3AB9B20A378DE004BB201 /* NewTweet */,
+			);
+			path = Tweet;
+			sourceTree = "<group>";
+		};
+		ACD3AB8C20A36A01004BB201 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				ACD3AB9120A36B89004BB201 /* Tweet.swift */,
+				ACD3AB9920A376EF004BB201 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		ACD3AB9320A37467004BB201 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				ACD3ABAD20A4928C004BB201 /* Generated */,
+				AC72651220923A190041D380 /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		ACD3AB9420A3746F004BB201 /* Storyboards */ = {
@@ -167,6 +229,52 @@
 				ACD3AB9720A374CB004BB201 /* Constants.swift */,
 			);
 			path = Configuration;
+			sourceTree = "<group>";
+		};
+		ACD3AB9B20A378DE004BB201 /* NewTweet */ = {
+			isa = PBXGroup;
+			children = (
+				ACD3AB9C20A378FC004BB201 /* NewTweetViewController.swift */,
+				ACD3AB9E20A37907004BB201 /* NewTweetViewModel.swift */,
+			);
+			path = NewTweet;
+			sourceTree = "<group>";
+		};
+		ACD3ABA020A37919004BB201 /* TweetList */ = {
+			isa = PBXGroup;
+			children = (
+				ACD3ABA120A37942004BB201 /* Cells */,
+				ACD3AB8D20A36A27004BB201 /* TweetListViewController.swift */,
+				ACD3AB8F20A36A35004BB201 /* TweetListViewModel.swift */,
+			);
+			path = TweetList;
+			sourceTree = "<group>";
+		};
+		ACD3ABA120A37942004BB201 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				ACD3ABA220A37958004BB201 /* TweetCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		ACD3ABA620A483C4004BB201 /* DataStore */ = {
+			isa = PBXGroup;
+			children = (
+				ACD3ABA920A4840D004BB201 /* IdentifiableObject.swift */,
+				ACD3ABA720A483D3004BB201 /* DataStore.swift */,
+				ACD3ABB220A49DA9004BB201 /* Seed.swift */,
+			);
+			path = DataStore;
+			sourceTree = "<group>";
+		};
+		ACD3ABAD20A4928C004BB201 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				ACD3ABAE20A492A6004BB201 /* Assets.swift */,
+				ACD3ABAF20A492A6004BB201 /* Storyboards.swift */,
+			);
+			path = Generated;
 			sourceTree = "<group>";
 		};
 		DF569C90A0F006E8B0950817 /* Pods */ = {
@@ -442,7 +550,20 @@
 				AC3B5F4620A2068C00630100 /* TweetProccessor.swift in Sources */,
 				AC3B5F4A20A2085F00630100 /* TweetComponent.swift in Sources */,
 				AC3B5F4820A2069D00630100 /* TweetConfig.swift in Sources */,
+				ACD3AB8E20A36A27004BB201 /* TweetListViewController.swift in Sources */,
+				ACD3ABA520A3F0DF004BB201 /* TweetIndicator.swift in Sources */,
+				ACD3ABB120A492A6004BB201 /* Storyboards.swift in Sources */,
+				ACD3ABB020A492A6004BB201 /* Assets.swift in Sources */,
+				ACD3AB9F20A37907004BB201 /* NewTweetViewModel.swift in Sources */,
+				ACD3ABB320A49DA9004BB201 /* Seed.swift in Sources */,
+				ACD3AB9020A36A35004BB201 /* TweetListViewModel.swift in Sources */,
 				AC72650C20923A170041D380 /* AppDelegate.swift in Sources */,
+				ACD3AB9D20A378FC004BB201 /* NewTweetViewController.swift in Sources */,
+				ACD3ABAA20A4840D004BB201 /* IdentifiableObject.swift in Sources */,
+				ACD3AB9220A36B89004BB201 /* Tweet.swift in Sources */,
+				ACD3ABA320A37958004BB201 /* TweetCell.swift in Sources */,
+				ACD3AB9A20A376EF004BB201 /* User.swift in Sources */,
+				ACD3ABA820A483D3004BB201 /* DataStore.swift in Sources */,
 				ACD3AB9820A374CB004BB201 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
