@@ -1,0 +1,56 @@
+# included: # paths to include during linting. `--path` is ignored if present.
+#   - Source
+excluded: # paths to ignore during linting. Takes precedence over `included`.
+  - Carthage
+  - Pods
+
+line_length:
+      warning: 120
+      error: 240
+
+identifier_name:
+  excluded:
+    - id
+    - T
+    - at
+type_body_length:
+    warning: 300
+    error: 500
+function_body_length:
+    warning: 80
+    error: 300
+file_length:
+    warning: 500
+    error: 800
+type_name:
+  excluded:
+    - id
+    - T
+    - at
+
+disabled_rules: # rule identifiers to exclude from running
+  - line_length
+  - trailing_whitespace
+
+opt_in_rules:
+
+  - attributes
+  - closure_end_indentation
+  - closure_spacing
+  - contains_over_first_not_nil
+  - explicit_type_interface
+  - fatal_error_message
+  - first_where
+  - force_cast: error
+  - force_try: warning
+  - force_unwrapping
+  - implicitly_unwrapped_optional
+  - let_var_whitespace
+  - operator_usage_whitespace
+  - overridden_super_call
+  - pattern_matching_keywords
+  - protocol_property_accessors_order
+  - redundant_nil_coalescing
+  - strict_fileprivate
+  - switch_case_on_newline
+  - unneeded_parentheses_in_closure_argument
