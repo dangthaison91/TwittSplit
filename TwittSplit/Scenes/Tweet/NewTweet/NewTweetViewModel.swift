@@ -30,7 +30,7 @@ class NewTweetViewModel: NewTweetViewModelInputs, NewTweetViewModelOutputs {
     private let successfulRelay = PublishRelay<Bool>()
     private let errorRelay = PublishRelay<Error>()
 
-    private let tweetProccessor = TweetProccessor(indicator: TweetSlashIndicator(index: 0, total: 0))
+    private let tweetProccessor = TweetProccessor(maxLength: 50, indicatorType: TweetSlashIndicator.self)
     private let disposeBag = DisposeBag()
     
     init() {

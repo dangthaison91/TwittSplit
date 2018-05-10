@@ -8,16 +8,6 @@
 
 import Foundation
 
-extension Int {
-    var numberDigits: Int {
-        if self < 10 {
-            return 1
-        } else {
-            return 1 + (self/10).numberDigits
-        }
-    }
-}
-
 enum TweetValidationError: Error {
     case empty
     case wordLengthExceed(Int)
@@ -45,29 +35,14 @@ enum SplitResult {
 }
 
 struct TweetProccessor {
-    let config: TweetConfig
-    let indicator: TweetIndicatorType
-    
-    init(config: TweetConfig = TweetConfig(), indicator: TweetIndicatorType) {
-        self.config = config
-        self.indicator = indicator
+//    let config: TweetConfig
+    let indicatorType: TweetIndicatorType.Type
+    let maxLength: Int
+    init(maxLength: Int = 50, indicatorType: TweetIndicatorType.Type = TweetSlashIndicator.self) {
+//        self.config = config
+        self.maxLength = maxLength
+        self.indicatorType = indicatorType
     }
-
-//    func getTotalParts(initial: Int, tweetLength: Int) -> Int {
-//
-//        let indicatorLength = initial.numberDigits * 2 + 2
-//
-//        let newTweetLength = initial * indicatorLength + tweetLength
-//        let newParts = newTweetLength % config.maxLength == 0 ? newTweetLength/config.maxLength : Int(newTweetLength/config.maxLength) + 1
-//
-//        let newIndicatorLength = newParts.numberDigits * 2 + 2
-//
-//        if indicatorLength == newIndicatorLength {
-//            return newParts
-//        } else {
-//            return getTotalParts(initial: newParts, tweetLength: tweetLength)
-//        }
-//    }
     
     func splitTweet(_ tweet: String?) throws -> SplitResult {
         // Validate empty tweet
@@ -75,7 +50,7 @@ struct TweetProccessor {
             throw TweetValidationError.empty
         }
         
-        let maxLength = config.maxLength
+//        let maxLength = config.maxLength
         
         // If length of tweet is less than the maximum count -> just return without index part
         if trimmedTweet.count <= maxLength {
@@ -92,7 +67,7 @@ struct TweetProccessor {
         let tweetComponents = buildTweet(words: words, total: total)
         
         // Validate if indicator length is exceed tweet max length?
-        let finalIndicator = type(of: indicator).init(index: UInt(tweetComponents.count), total: UInt(tweetComponents.count))
+        let finalIndicator = indicatorType.init(index: UInt(tweetComponents.count), total: UInt(tweetComponents.count))
         
         if finalIndicator.toString().count >= maxLength {
             throw TweetValidationError.indicatorLengthExceed(maxLength)
@@ -102,24 +77,23 @@ struct TweetProccessor {
     }
 
     private func buildTweet(words: [String], total: UInt) -> [TweetComponent] {
-
         var index: UInt = 1
         var wordIndex = 0
-        var component: TweetComponent = TweetComponent(indicator: type(of: indicator).init(index: index, total: total))
+        var component: TweetComponent = TweetComponent(indicator: indicatorType.init(index: index, total: total))
         var tweetComponents: [TweetComponent] = []
         
         // split tweet into tweet component
-        while(wordIndex < words.count) {
+        while(wordIndex < words.count && index < words.count) {
             let word = words[wordIndex]
-            let canAppend = component.append(word, maxCount: config.maxLength)
+            let canAppend = component.append(word, maxLength: maxLength)
             
             if !canAppend {
                 // Add component to array if it cannot append word any more
                 tweetComponents.append(component)
                 
-                // Reset
+                // Reset component
                 index += 1
-                component = TweetComponent(indicator: type(of: indicator).init(index: index, total: total))
+                component = TweetComponent(indicator: indicatorType.init(index: index, total: total))
                 continue
             }
             
@@ -129,7 +103,7 @@ struct TweetProccessor {
         // Add last component
         tweetComponents.append(component)
         
-        // build tweet again with total = number of tweet components
+        // build tweet again with `total` = number of tweet components
         // if number of parts is greater than total
         if tweetComponents.count > total {
             return buildTweet(words: words, total: UInt(tweetComponents.count))

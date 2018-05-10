@@ -10,7 +10,6 @@
 		8438A668421B00F11D62E2D6 /* Pods_TwittSplitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F517BB286C4731ACE44D8DB /* Pods_TwittSplitTests.framework */; };
 		91C437A9D10223E95134509D /* Pods_TwittSplit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA4679431607EFCF91F1487F /* Pods_TwittSplit.framework */; };
 		AC3B5F4620A2068C00630100 /* TweetProccessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3B5F4520A2068C00630100 /* TweetProccessor.swift */; };
-		AC3B5F4820A2069D00630100 /* TweetConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3B5F4720A2069D00630100 /* TweetConfig.swift */; };
 		AC3B5F4A20A2085F00630100 /* TweetComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3B5F4920A2085F00630100 /* TweetComponent.swift */; };
 		AC72650C20923A170041D380 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC72650B20923A170041D380 /* AppDelegate.swift */; };
 		AC72651120923A170041D380 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC72650F20923A170041D380 /* Main.storyboard */; };
@@ -48,7 +47,6 @@
 		6F517BB286C4731ACE44D8DB /* Pods_TwittSplitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TwittSplitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BFCEF4AC9BB08CDB3BA104B /* Pods-TwittSplit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwittSplit.release.xcconfig"; path = "Pods/Target Support Files/Pods-TwittSplit/Pods-TwittSplit.release.xcconfig"; sourceTree = "<group>"; };
 		AC3B5F4520A2068C00630100 /* TweetProccessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetProccessor.swift; sourceTree = "<group>"; };
-		AC3B5F4720A2069D00630100 /* TweetConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetConfig.swift; sourceTree = "<group>"; };
 		AC3B5F4920A2085F00630100 /* TweetComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetComponent.swift; sourceTree = "<group>"; };
 		AC72650820923A170041D380 /* TwittSplit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwittSplit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC72650B20923A170041D380 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -165,7 +163,6 @@
 				ACD3ABA420A3F0DE004BB201 /* TweetIndicator.swift */,
 				AC3B5F4520A2068C00630100 /* TweetProccessor.swift */,
 				AC3B5F4920A2085F00630100 /* TweetComponent.swift */,
-				AC3B5F4720A2069D00630100 /* TweetConfig.swift */,
 			);
 			path = TweetSplit;
 			sourceTree = "<group>";
@@ -549,7 +546,6 @@
 			files = (
 				AC3B5F4620A2068C00630100 /* TweetProccessor.swift in Sources */,
 				AC3B5F4A20A2085F00630100 /* TweetComponent.swift in Sources */,
-				AC3B5F4820A2069D00630100 /* TweetConfig.swift in Sources */,
 				ACD3AB8E20A36A27004BB201 /* TweetListViewController.swift in Sources */,
 				ACD3ABA520A3F0DF004BB201 /* TweetIndicator.swift in Sources */,
 				ACD3ABB120A492A6004BB201 /* Storyboards.swift in Sources */,

@@ -19,14 +19,14 @@ struct TweetComponent {
         }
     }
     
-    mutating func append(_ newWord: String, maxCount: Int) -> Bool {
+    mutating func append(_ newWord: String, maxLength: Int) -> Bool {
         
         // Estimate the length of tweet
         let nextCount = tweet.count + newWord.count + 1
         
         // If the length of tweet is excessed the limit
         // Return false and don't add to stack
-        guard nextCount <= maxCount else {
+        guard nextCount <= maxLength else {
             return false
         }
         
