@@ -14,7 +14,9 @@ struct TweetComponent {
     
     init(indicator: TweetIndicatorType) {
         self.indicator = indicator
-        self.tweet = indicator.toString()
+        if indicator.total > 0 {
+            self.tweet = indicator.toString()
+        }
     }
     
     mutating func append(_ newWord: String, maxCount: Int) -> Bool {

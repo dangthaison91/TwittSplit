@@ -51,40 +51,31 @@ struct TweetProccessor {
 //        }
 //    }
     
-    func splitTweet2(_ tweet: String) throws -> [TweetComponent] {
+    func splitTweet(_ tweet: String?) throws -> [TweetComponent] {
+        // Validate empty tweet
         
-        let trimmedTweet = tweet.trimmingCharacters(in: .whitespacesAndNewlines)
-        
-        let maxLength = config.maxLength
-        
-        // Validate
-        if trimmedTweet.isEmpty {
+        guard let trimmedTweet = tweet?.trimmingCharacters(in: .whitespacesAndNewlines), !trimmedTweet.isEmpty else {
             throw TweetValidationError.empty
         }
-//        if let error = validator.validateEmptyMessage(message) {
-//            return .error(error)
-//        }
-//
-//        // If lengh of message is lesser than the maximum count -> Just return
+        
+        // If lengh of message is lesser than the maximum count -> Just return
         if trimmedTweet.count <= config.maxLength {
-            return [TweetComponent(indicator: TweetSlashIndicator(index: 0, total: 0))]
+            var component = TweetComponent(indicator: TweetSlashIndicator(index: 0, total: 0))
+            component.append(trimmedTweet, maxCount: config.maxLength)
+            return [component]
         }
         
-        // Validate
-//        if let error = validator.validateWordExcessMaximumCount(words, max: configuration.maxTweetCharacterCount) {
-//            return .error(error)
-//        }
-//        let targetSet = CharacterSet.whitespacesAndNewlines.union(CharacterSet.decimalDigits)
-//        let isWordSeparator: (Character) -> Bool = { c in targetSet.contains(c.firstScalar) }
+        // let targetSet = CharacterSet.whitespacesAndNewlines.union(CharacterSet.decimalDigits)
+        // let isWordSeparator: (Character) -> Bool = { c in targetSet.contains(c.firstScalar) }
         
-        let words = tweet.components(separatedBy: CharacterSet.whitespaces)
+        let words = trimmedTweet.components(separatedBy: CharacterSet.whitespaces)
         
-        guard (words.filter { $0.count >= maxLength }).isEmpty else {
+        // Validate if word's length exceed maxLength
+        guard (words.filter { $0.count >= config.maxLength }).isEmpty else {
             throw TweetValidationError.wordLengthExceed
         }
-        let total: UInt = trimmedTweet.count % maxLength == 0 ? UInt(trimmedTweet.count/maxLength) : UInt(trimmedTweet.count/maxLength) + 1
-        // let total = getTotalParts(initial: initialParts, tweetLength: trimmedTweet.count)
-
+        let total: UInt = trimmedTweet.count % config.maxLength == 0 ? UInt(trimmedTweet.count/config.maxLength) : UInt(trimmedTweet.count/config.maxLength) + 1
+        
         return buildTweet(words: words, total: total)
     }
 
@@ -118,5 +109,4 @@ struct TweetProccessor {
         }
         return tweetComponents
     }
-    
 }
