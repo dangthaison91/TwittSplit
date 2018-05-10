@@ -10,7 +10,7 @@ import UIKit
 import Differentiator
 import SwiftDate
 
-public struct TweetCellModel {
+public struct TweetCellModel: Hashable, Equatable {
     let id: Int
     let username: String
     let userId: String
@@ -30,18 +30,11 @@ public struct TweetCellModel {
     }
 }
 
-extension TweetCellModel: IdentifiableType, Equatable {
+extension TweetCellModel: IdentifiableType {
     public typealias Identity = Int
 
     public var identity: Int {
-        return id
-    }
-    
-    public static func ==(lhs: TweetCellModel, rhs: TweetCellModel) -> Bool {
-        return lhs.message == rhs.message
-        && lhs.username == rhs.username
-        && lhs.userId == rhs.userId
-        && lhs.createdDate == rhs.createdDate
+        return self.hashValue
     }
 }
 
