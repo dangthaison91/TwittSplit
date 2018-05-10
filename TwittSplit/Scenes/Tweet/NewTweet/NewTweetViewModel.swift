@@ -24,11 +24,13 @@ class NewTweetViewModel: NewTweetViewModelInputs, NewTweetViewModelOutputs {
     
     // Outputs
     private(set) lazy var twitSuccessful: Driver<Bool> = self.successfulRelay.asDriver(onErrorJustReturn: false)
+    private(set) lazy var errors: Driver<Error> = self.errorRelay.asDriver(onErrorDriveWith: .never())
     
+    // Private
     private let successfulRelay = PublishRelay<Bool>()
     private let errorRelay = PublishRelay<Error>()
 
-    private let tweetProccessor = TweetProccessor()
+    private let tweetProccessor = TweetProccessor(indicator: TweetSlashIndicator(index: 0, total: 0))
     private let disposeBag = DisposeBag()
     
     init() {
@@ -53,7 +55,7 @@ class NewTweetViewModel: NewTweetViewModelInputs, NewTweetViewModelOutputs {
             .disposed(by: disposeBag)
     }
     
-    func splitMessage(_ message: String?) -> Observable<[TweetComponent]> {
+    func splitMessage(_ message: String?) -> Observable<SplitResult> {
         let tweetProccessor = self.tweetProccessor
         
         return Observable.create { (observer) -> Disposable in
@@ -68,13 +70,24 @@ class NewTweetViewModel: NewTweetViewModelInputs, NewTweetViewModelOutputs {
         }
     }
     
-    func saveTweets(_ components: [TweetComponent]) {
+    func saveTweets(_ result: SplitResult) {
+        var tweets = [Tweet]()
         
-        let tweets = components.reversed().map { component -> Tweet in
+        switch result {
+        case .components(let components):
+            tweets = components.reversed().map { component -> Tweet in
+                let tweet = Tweet()
+                tweet.content = component.tweet
+                tweet.creator = User()
+                return tweet
+            }
+            
+        case .message(let message):
+            
             let tweet = Tweet()
-            tweet.content = component.tweet
+            tweet.content = message
             tweet.creator = User()
-            return tweet
+            tweets.append(tweet)
         }
         
         try! DataStore.realm.write {

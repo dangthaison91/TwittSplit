@@ -17,6 +17,7 @@ public protocol NewTweetViewModelInputs {
 
 public protocol NewTweetViewModelOutputs {
     var twitSuccessful: Driver<Bool> { get }
+    var errors: Driver<Error> { get }
 }
 
 public protocol NewTweetViewModelType {
@@ -46,10 +47,22 @@ class NewTweetViewController: UIViewController {
             })
             .disposed(by: disposeBag)
         
+        configureViewModel()
+    }
+    
+    func configureViewModel() {
+        // Inputs
         sendTweetButton
             .rx.tap
             .bind(to: viewModel.inputs.sendTweet)
             .disposed(by: disposeBag)
+        
+        textView
+            .rx.text
+            .bind(to: viewModel.inputs.tweet)
+            .disposed(by: disposeBag)
+        
+        // Outputs
         
         viewModel
             .outputs.twitSuccessful
@@ -58,11 +71,11 @@ class NewTweetViewController: UIViewController {
             })
             .disposed(by: disposeBag)
         
-        textView
-            .rx.text
-            .bind(to: viewModel.inputs.tweet)
+        viewModel
+            .outputs.errors
+            .drive(onNext: { [unowned self] in self.showError($0) })
             .disposed(by: disposeBag)
-
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -71,4 +84,11 @@ class NewTweetViewController: UIViewController {
         textView.becomeFirstResponder()
     }
     
+    private func showError(_ error: Error) {
+        let alert = UIAlertController(title: "Error", message: String(describing: error), preferredStyle: .alert)
+        let OK = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(OK)
+        
+        present(alert, animated: true, completion: nil)
+    }
 }
