@@ -13,11 +13,11 @@
 		AC3B5F4820A2069D00630100 /* TweetConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3B5F4720A2069D00630100 /* TweetConfig.swift */; };
 		AC3B5F4A20A2085F00630100 /* TweetComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3B5F4920A2085F00630100 /* TweetComponent.swift */; };
 		AC72650C20923A170041D380 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC72650B20923A170041D380 /* AppDelegate.swift */; };
-		AC72650E20923A170041D380 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC72650D20923A170041D380 /* ViewController.swift */; };
 		AC72651120923A170041D380 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC72650F20923A170041D380 /* Main.storyboard */; };
 		AC72651320923A190041D380 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC72651220923A190041D380 /* Assets.xcassets */; };
 		AC72651620923A190041D380 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC72651420923A190041D380 /* LaunchScreen.storyboard */; };
 		AC72652120923A190041D380 /* TwittSplitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC72652020923A190041D380 /* TwittSplitTests.swift */; };
+		ACD3AB9820A374CB004BB201 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD3AB9720A374CB004BB201 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +39,6 @@
 		AC3B5F4920A2085F00630100 /* TweetComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetComponent.swift; sourceTree = "<group>"; };
 		AC72650820923A170041D380 /* TwittSplit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwittSplit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC72650B20923A170041D380 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AC72650D20923A170041D380 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AC72651020923A170041D380 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AC72651220923A190041D380 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC72651520923A190041D380 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +46,7 @@
 		AC72651C20923A190041D380 /* TwittSplitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TwittSplitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC72652020923A190041D380 /* TwittSplitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwittSplitTests.swift; sourceTree = "<group>"; };
 		AC72652220923A190041D380 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ACD3AB9720A374CB004BB201 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BA4679431607EFCF91F1487F /* Pods_TwittSplit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TwittSplit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD2FF390CAF35C8D7C2B16C5 /* Pods-TwittSplitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwittSplitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TwittSplitTests/Pods-TwittSplitTests.release.xcconfig"; sourceTree = "<group>"; };
 		FB310D765436E909E4D2C954 /* Pods-TwittSplit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwittSplit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TwittSplit/Pods-TwittSplit.debug.xcconfig"; sourceTree = "<group>"; };
@@ -84,6 +84,7 @@
 		AC3B5F4220A2045A00630100 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				ACD3ABA620A483C4004BB201 /* DataStore */,
 				ACD3AB8620A359B9004BB201 /* TweetSplit */,
 			);
 			path = Services;
@@ -112,13 +113,13 @@
 		AC72650A20923A170041D380 /* TwittSplit */ = {
 			isa = PBXGroup;
 			children = (
+				ACD3AB9520A37477004BB201 /* AppDelegate */,
+				ACD3AB9620A374B3004BB201 /* Configuration */,
+				ACD3AB8C20A36A01004BB201 /* Models */,
+				ACD3AB8920A369D5004BB201 /* Scenes */,
 				AC3B5F4220A2045A00630100 /* Services */,
-				AC72650B20923A170041D380 /* AppDelegate.swift */,
-				AC72650D20923A170041D380 /* ViewController.swift */,
-				AC72650F20923A170041D380 /* Main.storyboard */,
-				AC72651220923A190041D380 /* Assets.xcassets */,
-				AC72651420923A190041D380 /* LaunchScreen.storyboard */,
-				AC72651720923A190041D380 /* Info.plist */,
+				ACD3AB9420A3746F004BB201 /* Storyboards */,
+				ACD3AB9320A37467004BB201 /* Resources */,
 			);
 			path = TwittSplit;
 			sourceTree = "<group>";
@@ -140,6 +141,32 @@
 				AC3B5F4720A2069D00630100 /* TweetConfig.swift */,
 			);
 			path = TweetSplit;
+			sourceTree = "<group>";
+		};
+		ACD3AB9420A3746F004BB201 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				AC72650F20923A170041D380 /* Main.storyboard */,
+				AC72651420923A190041D380 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		ACD3AB9520A37477004BB201 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				AC72650B20923A170041D380 /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		ACD3AB9620A374B3004BB201 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				AC72651720923A190041D380 /* Info.plist */,
+				ACD3AB9720A374CB004BB201 /* Constants.swift */,
+			);
+			path = Configuration;
 			sourceTree = "<group>";
 		};
 		DF569C90A0F006E8B0950817 /* Pods */ = {
@@ -413,10 +440,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC3B5F4620A2068C00630100 /* TweetProccessor.swift in Sources */,
-				AC72650E20923A170041D380 /* ViewController.swift in Sources */,
 				AC3B5F4A20A2085F00630100 /* TweetComponent.swift in Sources */,
 				AC3B5F4820A2069D00630100 /* TweetConfig.swift in Sources */,
 				AC72650C20923A170041D380 /* AppDelegate.swift in Sources */,
+				ACD3AB9820A374CB004BB201 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
