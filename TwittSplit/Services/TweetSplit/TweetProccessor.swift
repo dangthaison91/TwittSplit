@@ -35,11 +35,10 @@ enum SplitResult {
 }
 
 struct TweetProccessor {
-//    let config: TweetConfig
     let indicatorType: TweetIndicatorType.Type
     let maxLength: Int
+    
     init(maxLength: Int = 50, indicatorType: TweetIndicatorType.Type = TweetSlashIndicator.self) {
-//        self.config = config
         self.maxLength = maxLength
         self.indicatorType = indicatorType
     }
@@ -49,9 +48,7 @@ struct TweetProccessor {
         guard let trimmedTweet = tweet?.trimmingCharacters(in: .whitespacesAndNewlines), !trimmedTweet.isEmpty else {
             throw TweetValidationError.empty
         }
-        
-//        let maxLength = config.maxLength
-        
+                
         // If length of tweet is less than the maximum count -> just return without index part
         if trimmedTweet.count <= maxLength {
             return SplitResult.message(trimmedTweet)
@@ -63,7 +60,8 @@ struct TweetProccessor {
         guard (words.filter { $0.count >= maxLength }).isEmpty else {
             throw TweetValidationError.wordLengthExceed(maxLength)
         }
-        let total: UInt = trimmedTweet.count % maxLength == 0 ? UInt(trimmedTweet.count/maxLength) : UInt(trimmedTweet.count/maxLength) + 1
+        let tweetLength = trimmedTweet.count
+        let total: UInt = trimmedTweet.count % maxLength == 0 ? UInt(tweetLength/maxLength) : UInt(tweetLength/maxLength) + 1
         let tweetComponents = buildTweet(words: words, total: total)
         
         // Validate if indicator length is exceed tweet max length?
