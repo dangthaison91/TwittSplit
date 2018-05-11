@@ -1,4 +1,7 @@
 # TwittSplit
+<p align="center"> 
+<img src="https://media.giphy.com/media/lkHqV0rCS2TFLecymT/giphy.gif">
+</p>
 
 ## Requirements
 - iOS >= 10.0
